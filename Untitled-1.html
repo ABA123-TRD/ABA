@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نمونه کار</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #fafafa;
+    }
+
+    /* نوار بالا */
+    .navbar {
+      background-color: #004cff;
+      color: rgb(227, 0, 0);
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 60px;
+    }
+    /* آیتم‌های منو */
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+    }
+
+    .menu a {
+      color: rgb(0, 0, 0);
+      padding: 10px 15px;
+      text-decoration: none;
+      border-top: 1px solid #555;
+    }
+
+    .menu a:hover {
+      background-color: #555;
+    }
+
+    /* نمایش منو وقتی فعال شد */
+    .menu.show {
+      display: flex;
+    }
+
+    /* نمایش افقی در دسکتاپ */
+    @media (min-width: 768px) {
+      .menu {
+        display: flex !important;
+        flex-direction: row;
+        background-color: transparent;
+      }
+      .menu a {
+        border: none;
+      }
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <marquee><h1>به ربات ABAخوش امدید</h1></marquee>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="#">خانه</a>
+    <a href="#">درباره ما</a>
+    <a href="#">خدمات</a>
+    <a href="#">تماس با ما</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
